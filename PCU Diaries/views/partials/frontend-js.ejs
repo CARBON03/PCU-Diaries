@@ -1,0 +1,39 @@
+
+
+
+
+<script>
+  
+  // nav bar fade in animation logics
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 20) {
+        document.getElementById("main-navbar").classList.add("nav-js");
+        document.getElementById("checkbtn").classList.add("animateNavCheckbtn");
+        document.getElementById("nav-create").classList.add("nav-buttons-js");
+        document.getElementById("nav-account").classList.add("nav-buttons-js");
+        document.getElementById("nav-feedback").classList.add("nav-buttons-js");
+        document.getElementById("mainLogo").classList.add("navLogoAnimate");
+      } else {
+        document.getElementById("main-navbar").classList.remove("nav-js");
+        document.getElementById("checkbtn").classList.remove("animateNavCheckbtn");
+        document.getElementById("nav-create").classList.remove("nav-buttons-js");
+        document.getElementById("nav-account").classList.remove("nav-buttons-js");
+        document.getElementById("nav-feedback").classList.remove("nav-buttons-js");
+        document.getElementById("mainLogo").classList.remove("navLogoAnimate");
+      }
+    }
+  
+
+
+
+
+
+
+
+
+
+
+  </script>
+

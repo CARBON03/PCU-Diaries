@@ -1,0 +1,17 @@
+<%- include ("partials/header.ejs") %>
+
+<div class="blog-editor-container">
+    <div class="blog-title-and-submit">
+        <label class="blog-title-label" for="blog-title"></label>
+        <input placeholder="Blog Title" id="blog-title-js" type="text" name="blog-title" maxlength="50" required>
+        <input id="blogSubmitButton" type="submit" value="Submit">
+    </div>
+    
+    <div class="blog-text-editor">
+        <div id="editor"></div>
+    </div>
+</div>
+
+<%- include ("partials/blog-js.ejs") %>
+<%- include ("partials/frontend-js.ejs") %>
+<%- include ("partials/footer.ejs") %>

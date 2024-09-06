@@ -1,0 +1,78 @@
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+<script>
+    const toolbarOptions = [
+        ['bold', 'italic', 'underline'],       
+        ['blockquote'],
+        ['link', 'image'],
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'list': 'check' }],
+        [{ 'script': 'sub'}, { 'script': 'super' }],   
+        [{ 'size': ['small', false, 'large', 'huge'] }], 
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        [{ 'color': [] }, { 'background': [] }],         
+        [{ 'font': [] }],
+        [{ 'align': [] }],
+        ['clean']                                        
+    ];
+
+    const quill = new Quill('#editor', {
+        modules: {
+            toolbar: toolbarOptions
+        },
+        theme: 'snow'
+    });
+
+    function blogPostSave() {
+        let blogHtml = quill.root.innerHTML;
+        let blogTitle = document.getElementById('blog-title-js').value;
+        let publishTime = new Date().toISOString();
+
+        if(blogTitle !== '' && blogHtml !== "<p><br></p>"){
+            var blogPost = {
+                title: blogTitle,
+                content: blogHtml,  
+                publishTime: publishTime
+            };
+            console.log(blogPost);
+            return blogPost;
+        }
+
+        return null;
+    }
+
+    function PostSave() {
+        const postContent = blogPostSave();
+        
+        if (!postContent) {
+            alert('One Of the Field (Title , Blog Content) Cannot Be Empty!');
+            return;
+        }
+
+        fetch('/api/posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(postContent),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to save post');
+            }
+            return response.json();
+        })
+        .then(result => {
+            console.log('Post saved:', result);
+            alert('Blog post saved successfully!');
+            // Clear form
+            document.getElementById('blog-title-js').value = '';
+            quill.setContents([]);
+        })
+        .catch(error => {
+            console.error('Error saving post:', error);
+            alert('Error saving post. Please try again.');
+        });
+    }
+
+    document.getElementById('blogSubmitButton').addEventListener('click', PostSave);
+</script>

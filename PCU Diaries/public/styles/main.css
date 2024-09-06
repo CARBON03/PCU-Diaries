@@ -1,0 +1,597 @@
+/* This Section is for responsive navbar styling */
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  
+  body {
+    overflow-x: hidden;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  nav {
+    background: white;
+    height: 80px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.3) ;
+    z-index: 1000;
+  }
+
+  /* nav bar fade in animation logics */
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .nav-js{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.5);
+    background: #1E201E;
+    animation: fadeIn .4s ease-in-out;
+    z-index: 1000;
+  }
+  
+
+  .logo {
+    color: #1E201E;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+  }
+
+  .logo:hover{
+    background: none;
+    color: #1E201E;
+    
+  }
+
+  .navLogoAnimate{
+    color: #ECDFCC;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+  }
+
+  .navLogoAnimate:hover{
+    background: none;
+    color: #ECDFCC;
+  }
+
+  
+  nav ul {
+    float: right;
+    margin-right: 20px;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  
+  nav ul li a {
+    color: #1E201E;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+
+  .nav-buttons-js{
+    color: #ECDFCC;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  
+  
+  .checkbtn {
+    font-size: 30px;
+    color: #1E201E;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .animateNavCheckbtn{
+    font-size: 30px;
+    color: #ECDFCC;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+
+
+  #check {
+    display: none;
+  }
+
+  .nav-links:hover {
+    background: #1E201E;
+  color: #ECDFCC;
+  transition: .5s;
+  }
+  
+  @media (max-width: 952px) {
+    label.logo {
+      font-size: 30px;
+      padding-left: 50px;
+    }
+  
+    nav ul li a {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 858px) {
+    .checkbtn {
+      display: block;
+    }
+  
+    .logo{
+      font-size: 1.7rem;
+      padding: 50px;
+    }
+
+    ul {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #3C3D37;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+  
+    nav ul li {
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+  
+    nav ul li a {
+      font-size: 20px;
+      color: #ECDFCC;
+    }
+  
+    .nav-links:hover {
+      background: none;
+      color: #1E201E;
+    }
+  
+    #check:checked~ul {
+      left: 0;
+    }
+  }
+
+
+
+
+
+/* navbar styling ends here */
+
+
+
+/* footer styling starts hear  */
+#footer {
+  background-color: #1E201E;
+  color: #ECDFCC;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: auto;
+}
+#subscribe {
+  margin-bottom: 30px;
+}
+#subscribe h3 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  margin-top: 3rem;
+}
+#subscribe input {
+  padding: 10px;
+  width: 200px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+#subscribe button {
+  padding: 10px 20px;
+  background-color: #ECDFCC;
+  color: #1E201E;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#subscribe button:hover {
+  background-color: #ECDFCC;
+  color: #1E201E;
+}
+#social {
+  margin-bottom: 30px;
+}
+#social a {
+  color: #ffffff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+#social a:hover {
+  color: #ECDFCC;
+}
+#love {
+  font-style: italic;
+  margin-bottom: 10px;
+  color: white;
+}
+#copyright {
+  font-size: 0.8em;
+  color: #888;
+}
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+#footer > div, #footer > p {
+  animation: fadeInUp 0.5s ease-out;
+}
+/* footer styleing ends */
+
+
+
+
+/* create blog file styling */
+
+.blog-editor-container{
+  flex: 1;
+  display: grid;
+  grid-template-rows: 80px 1fr ;
+  grid-template-columns:1fr ;
+  background-color: rgba(0,0,0,.05);
+}
+
+.blog-title-and-submit{
+  grid-area: 1/1/2/2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+#blog-title-js{
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+input[type="submit"]:hover {
+  background: #1E201E;
+  color: #ECDFCC;
+  transition: .5s;
+}
+#blogSubmitButton{
+  padding: 10px 20px;
+  margin-right: 20px;
+  font-size: 16px;
+  background-color: #ECDFCC;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.blog-text-editor{
+  grid-area: 2/1/3/2;
+  padding: 10px 20px 50px 20px;
+  margin-bottom: 100px;
+  margin-top: 0px;
+}
+
+/* banner upload section */
+
+.blogBannerImg{
+  grid-area: 2/1/3/2;
+  background-color: black;
+  margin: 10px 20px 10px 20px;
+}
+
+
+
+
+
+/* Posts Section For Main Page */
+
+.allPosts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  width: 90%;
+  min-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .allPosts {
+    width: 70%;
+  }
+}
+
+.post {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  padding: 1.5em;
+  padding-right: 5rem;
+  border-radius: 12px;
+  background-color: #ECDFCC;
+  transition: all 0.3s ease;
+  max-width: 95%;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+
+.post:hover {
+  transform: scale(1.05);
+}
+
+
+.mainPagePostPreview {
+  flex: 0 0 300px;
+  max-width: 50%;
+  padding-right: 1.5em;
+  height: 100%;
+}
+
+.mainPagePostPreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.post-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  overflow: hidden;
+}
+
+.mainPagePostHeading {
+  font-size: 1.8rem;
+  margin: 0.5rem 0 1rem;
+  color: #333;
+  font-weight: 600;
+  line-height: 1.2;
+  max-height: none; /* Remove max-height */
+  overflow: visible; /* Allow content to be visible */
+  word-wrap: break-word; /* Allow words to break and wrap */
+}
+
+.mainPagePostExcerpt {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  max-height: 4.5em;
+}
+
+.mainPagePostTiming {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 1rem;
+  font-weight: 400;
+}
+
+#mainPagePostLink {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  max-width: 800px;
+}
+
+#mainPagePostLink .post {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.mainPagePostLink:hover {
+  background: transparent;
+  color: #ECDFCC;
+  transition: .5s;
+}
+
+
+@media (max-width: 768px) {
+
+  
+.post:hover {
+  transform: none;
+}
+
+  
+  #mainPagePostLink {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    min-width: 300px;
+  }
+
+  .post {
+    flex-direction: column;
+    max-width: 95%;
+    padding: 1em;
+    height: auto;
+  }
+
+  .mainPagePostPreview {
+    max-width: 100%;
+    padding-right: 0;
+    margin-bottom: 1em;
+    height: 200px;
+  }
+
+  .mainPagePostPreview img {
+    height: 200px;
+  }
+
+  .mainPagePostHeading {     
+    font-size: 1.5rem;     
+    max-width: 90%;     
+    overflow: hidden;     
+    text-overflow: ellipsis;   
+  } 
+}  
+
+
+
+
+
+
+/* blogPage Css Starts Here */
+
+
+
+#blogPageMainDiv{
+  margin: auto;
+  padding: 50px;
+  width: 80%;
+  min-height: 1000px;
+  border: solid rgba(0,0,0,.5) 1px;
+  border-radius: 10px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(auto-fit, minmax(rem, 1fr));
+  gap: 3rem;
+  background-color: white;
+  }
+
+.blogPageHeading{
+  grid-area: 1/1/1/4;
+  border-bottom:  solid rgba(0,0,0,.5) 1px ;
+  width: 100%;
+  height: fit-content;
+}
+
+.blogPageHeading h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+.blogPagePost{
+  overflow: hidden;
+  grid-area: 2/1/3/4;
+}
+
+.blogPageTiming{
+  grid-area:3/1/4/4;
+  border-top:  solid rgba(0,0,0,.5) 1px ;
+  padding: 1rem;
+  display: flex;
+  align-self: flex-end;
+  justify-content: flex-end;
+}
+
+.blogPageTiming p {
+  color:  rgba(0,0,0,.5); 
+  font-size: .9rem;
+}
+
+
+@media (max-width: 1000px) {
+
+  #blogPageMainDiv{
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+    min-height: 1000px;
+    border: solid rgba(0,0,0,.5) 1px;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(rem, 1fr));
+    gap: 3rem;
+    background-color: white;
+    }
+  
+  .blogPageHeading{
+    grid-area: 1/1/1/4;
+    border-bottom:  solid rgba(0,0,0,.5) 1px ;
+    width: 100%;
+    height: fit-content;
+  }
+  
+  .blogPageHeading h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    word-wrap: break-word;
+  }
+  
+  .blogPagePost{
+    overflow: hidden;
+    grid-area: 2/1/3/4;
+  }
+  
+  .blogPageTiming{
+    grid-area:3/1/4/4;
+    border-top:  solid rgba(0,0,0,.5) 1px ;
+    padding: 1rem;
+    display: flex;
+    align-self: flex-end;
+    justify-content: flex-end;
+  }
+  
+  .blogPageTiming p {
+    color:  rgba(0,0,0,.5); 
+    font-size: .7rem;
+  }
+  
+
+} 
+

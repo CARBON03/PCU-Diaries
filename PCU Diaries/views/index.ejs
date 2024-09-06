@@ -1,0 +1,29 @@
+<%- include ("partials/header.ejs") %>
+  
+  
+    <section class="allPosts">
+        <% if (posts && posts.length > 0) { %>
+          <% posts.forEach(post => { %>
+
+            <a href="/post/<%= post._id %>" id="mainPagePostLink">
+              <article class="post">
+                <div class="mainPagePostPreview">
+                  <img src="/uploads/images.jpeg" alt="<%= post.title %>">
+                </div>
+                <div class="post-content">
+                  <h2 class="mainPagePostHeading"><%= post.title %></h2>
+                  <p class="mainPagePostExcerpt"><%= post.excerpt %></p>
+                  <time class="mainPagePostTiming" datetime="<%= post.publishTime.toISOString() %>"><%= new Date(post.publishTime).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %>
+                  </time>
+                </div>
+              </article>
+            </a>
+          <% }) %>
+        <% } else { %>
+          <p>No posts available yet.</p>
+        <% } %>
+    </section>
+  
+  
+  <%- include ("partials/frontend-js.ejs") %>
+  <%- include ("partials/footer.ejs") %>
